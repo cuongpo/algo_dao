@@ -1,0 +1,67 @@
+{
+    "hints": {
+        "write_local_blob(string)void": {
+            "call_config": {
+                "no_op": "CALL"
+            }
+        },
+        "read_local_blob()string": {
+            "call_config": {
+                "no_op": "CALL"
+            }
+        }
+    },
+    "source": {
+        "approval": "I3ByYWdtYSB2ZXJzaW9uIDgKaW50Y2Jsb2NrIDEyNyAwIDEKYnl0ZWNibG9jayAweCAweDAwMDEKdHhuIE51bUFwcEFyZ3MKaW50Y18xIC8vIDAKPT0KYm56IG1haW5fbDYKdHhuYSBBcHBsaWNhdGlvbkFyZ3MgMApwdXNoYnl0ZXMgMHhhNzM2MmE2OCAvLyAid3JpdGVfbG9jYWxfYmxvYihzdHJpbmcpdm9pZCIKPT0KYm56IG1haW5fbDUKdHhuYSBBcHBsaWNhdGlvbkFyZ3MgMApwdXNoYnl0ZXMgMHg0ZmVjMDc2MyAvLyAicmVhZF9sb2NhbF9ibG9iKClzdHJpbmciCj09CmJueiBtYWluX2w0CmVycgptYWluX2w0Ogp0eG4gT25Db21wbGV0aW9uCmludGNfMSAvLyBOb09wCj09CnR4biBBcHBsaWNhdGlvbklECmludGNfMSAvLyAwCiE9CiYmCmFzc2VydApjYWxsc3ViIHJlYWRsb2NhbGJsb2JjYXN0ZXJfNwppbnRjXzIgLy8gMQpyZXR1cm4KbWFpbl9sNToKdHhuIE9uQ29tcGxldGlvbgppbnRjXzEgLy8gTm9PcAo9PQp0eG4gQXBwbGljYXRpb25JRAppbnRjXzEgLy8gMAohPQomJgphc3NlcnQKY2FsbHN1YiB3cml0ZWxvY2FsYmxvYmNhc3Rlcl82CmludGNfMiAvLyAxCnJldHVybgptYWluX2w2Ogp0eG4gT25Db21wbGV0aW9uCmludGNfMSAvLyBOb09wCj09CmJueiBtYWluX2wxMAp0eG4gT25Db21wbGV0aW9uCmludGNfMiAvLyBPcHRJbgo9PQpibnogbWFpbl9sOQplcnIKbWFpbl9sOToKdHhuIEFwcGxpY2F0aW9uSUQKaW50Y18xIC8vIDAKIT0KYXNzZXJ0CmNhbGxzdWIgb3B0aW5fMwppbnRjXzIgLy8gMQpyZXR1cm4KbWFpbl9sMTA6CnR4biBBcHBsaWNhdGlvbklECmludGNfMSAvLyAwCj09CmFzc2VydAppbnRjXzIgLy8gMQpyZXR1cm4KCi8vIHplcm9faW1wbAp6ZXJvaW1wbF8wOgpwcm90byAxIDAKZnJhbWVfZGlnIC0xCnB1c2hieXRlcyAweDAwIC8vIDB4MDAKaW50Y18wIC8vIDEyNwpiemVybwphcHBfbG9jYWxfcHV0CmZyYW1lX2RpZyAtMQpwdXNoYnl0ZXMgMHgwMSAvLyAweDAxCmludGNfMCAvLyAxMjcKYnplcm8KYXBwX2xvY2FsX3B1dApyZXRzdWIKCi8vIHJlYWRfaW1wbApyZWFkaW1wbF8xOgpwcm90byAzIDEKYnl0ZWNfMCAvLyAiIgpzdG9yZSA2CmZyYW1lX2RpZyAtMgppbnRjXzAgLy8gMTI3Ci8Kc3RvcmUgNQpyZWFkaW1wbF8xX2wxOgpsb2FkIDUKZnJhbWVfZGlnIC0xCmludGNfMCAvLyAxMjcKLwo8PQpieiByZWFkaW1wbF8xX2w5CmxvYWQgNQpmcmFtZV9kaWcgLTIKaW50Y18wIC8vIDEyNwovCj09CmJueiByZWFkaW1wbF8xX2w4CmludGNfMSAvLyAwCnJlYWRpbXBsXzFfbDQ6CnN0b3JlIDcKbG9hZCA1CmZyYW1lX2RpZyAtMQppbnRjXzAgLy8gMTI3Ci8KPT0KYm56IHJlYWRpbXBsXzFfbDcKaW50Y18wIC8vIDEyNwpyZWFkaW1wbF8xX2w2OgpzdG9yZSA4CmxvYWQgNgpmcmFtZV9kaWcgLTMKYnl0ZWNfMSAvLyAweDAwMDEKbG9hZCA1CmludGNfMiAvLyAxCmV4dHJhY3QzCmFwcF9sb2NhbF9nZXQKbG9hZCA3CmxvYWQgOApzdWJzdHJpbmczCmNvbmNhdApzdG9yZSA2CmxvYWQgNQppbnRjXzIgLy8gMQorCnN0b3JlIDUKYiByZWFkaW1wbF8xX2wxCnJlYWRpbXBsXzFfbDc6CmZyYW1lX2RpZyAtMQppbnRjXzAgLy8gMTI3CiUKYiByZWFkaW1wbF8xX2w2CnJlYWRpbXBsXzFfbDg6CmZyYW1lX2RpZyAtMgppbnRjXzAgLy8gMTI3CiUKYiByZWFkaW1wbF8xX2w0CnJlYWRpbXBsXzFfbDk6CmxvYWQgNgpyZXRzdWIKCi8vIHdyaXRlX2ltcGwKd3JpdGVpbXBsXzI6CnByb3RvIDMgMAppbnRjXzEgLy8gMApzdG9yZSAzCmZyYW1lX2RpZyAtMgppbnRjXzAgLy8gMTI3Ci8Kc3RvcmUgMAp3cml0ZWltcGxfMl9sMToKbG9hZCAwCmZyYW1lX2RpZyAtMgpmcmFtZV9kaWcgLTEKbGVuCisKaW50Y18wIC8vIDEyNwovCjw9CmJ6IHdyaXRlaW1wbF8yX2wxMgpsb2FkIDAKZnJhbWVfZGlnIC0yCmludGNfMCAvLyAxMjcKLwo9PQpibnogd3JpdGVpbXBsXzJfbDExCmludGNfMSAvLyAwCndyaXRlaW1wbF8yX2w0OgpzdG9yZSAxCmxvYWQgMApmcmFtZV9kaWcgLTIKZnJhbWVfZGlnIC0xCmxlbgorCmludGNfMCAvLyAxMjcKLwo9PQpibnogd3JpdGVpbXBsXzJfbDEwCmludGNfMCAvLyAxMjcKd3JpdGVpbXBsXzJfbDY6CnN0b3JlIDIKZnJhbWVfZGlnIC0zCmJ5dGVjXzEgLy8gMHgwMDAxCmxvYWQgMAppbnRjXzIgLy8gMQpleHRyYWN0Mwpsb2FkIDIKaW50Y18wIC8vIDEyNwohPQpsb2FkIDEKaW50Y18xIC8vIDAKIT0KfHwKYm56IHdyaXRlaW1wbF8yX2w5CmludGNfMCAvLyAxMjcKc3RvcmUgNApmcmFtZV9kaWcgLTEKbG9hZCAzCmludGNfMCAvLyAxMjcKZXh0cmFjdDMKd3JpdGVpbXBsXzJfbDg6CmFwcF9sb2NhbF9wdXQKbG9hZCAzCmxvYWQgNAorCnN0b3JlIDMKbG9hZCAwCmludGNfMiAvLyAxCisKc3RvcmUgMApiIHdyaXRlaW1wbF8yX2wxCndyaXRlaW1wbF8yX2w5Ogpsb2FkIDIKbG9hZCAxCi0Kc3RvcmUgNApmcmFtZV9kaWcgLTMKYnl0ZWNfMSAvLyAweDAwMDEKbG9hZCAwCmludGNfMiAvLyAxCmV4dHJhY3QzCmFwcF9sb2NhbF9nZXQKaW50Y18xIC8vIDAKbG9hZCAxCnN1YnN0cmluZzMKZnJhbWVfZGlnIC0xCmxvYWQgMwpsb2FkIDQKZXh0cmFjdDMKY29uY2F0CmZyYW1lX2RpZyAtMwpieXRlY18xIC8vIDB4MDAwMQpsb2FkIDAKaW50Y18yIC8vIDEKZXh0cmFjdDMKYXBwX2xvY2FsX2dldApsb2FkIDIKaW50Y18wIC8vIDEyNwpzdWJzdHJpbmczCmNvbmNhdApiIHdyaXRlaW1wbF8yX2w4CndyaXRlaW1wbF8yX2wxMDoKZnJhbWVfZGlnIC0yCmZyYW1lX2RpZyAtMQpsZW4KKwppbnRjXzAgLy8gMTI3CiUKYiB3cml0ZWltcGxfMl9sNgp3cml0ZWltcGxfMl9sMTE6CmZyYW1lX2RpZyAtMgppbnRjXzAgLy8gMTI3CiUKYiB3cml0ZWltcGxfMl9sNAp3cml0ZWltcGxfMl9sMTI6CnJldHN1YgoKLy8gb3B0X2luCm9wdGluXzM6CnByb3RvIDAgMAp0eG4gU2VuZGVyCmNhbGxzdWIgemVyb2ltcGxfMApyZXRzdWIKCi8vIHdyaXRlX2xvY2FsX2Jsb2IKd3JpdGVsb2NhbGJsb2JfNDoKcHJvdG8gMSAwCnR4biBTZW5kZXIKaW50Y18xIC8vIDAKZnJhbWVfZGlnIC0xCmV4dHJhY3QgMiAwCmNhbGxzdWIgd3JpdGVpbXBsXzIKcmV0c3ViCgovLyByZWFkX2xvY2FsX2Jsb2IKcmVhZGxvY2FsYmxvYl81Ogpwcm90byAwIDEKYnl0ZWNfMCAvLyAiIgp0eG4gU2VuZGVyCmludGNfMSAvLyAwCnB1c2hpbnQgMjU0IC8vIDI1NAppbnRjXzIgLy8gMQotCmNhbGxzdWIgcmVhZGltcGxfMQpmcmFtZV9idXJ5IDAKZnJhbWVfZGlnIDAKbGVuCml0b2IKZXh0cmFjdCA2IDAKZnJhbWVfZGlnIDAKY29uY2F0CmZyYW1lX2J1cnkgMApyZXRzdWIKCi8vIHdyaXRlX2xvY2FsX2Jsb2JfY2FzdGVyCndyaXRlbG9jYWxibG9iY2FzdGVyXzY6CnByb3RvIDAgMApieXRlY18wIC8vICIiCnR4bmEgQXBwbGljYXRpb25BcmdzIDEKZnJhbWVfYnVyeSAwCmZyYW1lX2RpZyAwCmNhbGxzdWIgd3JpdGVsb2NhbGJsb2JfNApyZXRzdWIKCi8vIHJlYWRfbG9jYWxfYmxvYl9jYXN0ZXIKcmVhZGxvY2FsYmxvYmNhc3Rlcl83Ogpwcm90byAwIDAKYnl0ZWNfMCAvLyAiIgpjYWxsc3ViIHJlYWRsb2NhbGJsb2JfNQpmcmFtZV9idXJ5IDAKcHVzaGJ5dGVzIDB4MTUxZjdjNzUgLy8gMHgxNTFmN2M3NQpmcmFtZV9kaWcgMApjb25jYXQKbG9nCnJldHN1Yg==",
+        "clear": "I3ByYWdtYSB2ZXJzaW9uIDgKcHVzaGludCAwIC8vIDAKcmV0dXJu"
+    },
+    "state": {
+        "global": {
+            "num_byte_slices": 0,
+            "num_uints": 0
+        },
+        "local": {
+            "num_byte_slices": 2,
+            "num_uints": 0
+        }
+    },
+    "schema": {
+        "global": {
+            "declared": {},
+            "reserved": {}
+        },
+        "local": {
+            "declared": {},
+            "reserved": {}
+        }
+    },
+    "contract": {
+        "name": "Local Blob App",
+        "methods": [
+            {
+                "name": "write_local_blob",
+                "args": [
+                    {
+                        "type": "string",
+                        "name": "v"
+                    }
+                ],
+                "returns": {
+                    "type": "void"
+                }
+            },
+            {
+                "name": "read_local_blob",
+                "args": [],
+                "returns": {
+                    "type": "string"
+                }
+            }
+        ],
+        "networks": {}
+    },
+    "bare_call_config": {
+        "no_op": "CREATE",
+        "opt_in": "CALL"
+    }
+}

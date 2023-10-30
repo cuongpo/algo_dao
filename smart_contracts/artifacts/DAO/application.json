@@ -1,0 +1,96 @@
+{
+    "hints": {
+        "join_dao((address,bool))void": {
+            "structs": {
+                "output": {
+                    "name": "memberDAO",
+                    "elements": [
+                        [
+                            "member_address",
+                            "address"
+                        ],
+                        [
+                            "member_check",
+                            "bool"
+                        ]
+                    ]
+                }
+            },
+            "call_config": {
+                "no_op": "CALL"
+            }
+        },
+        "check_member(address)(address,bool)": {
+            "structs": {
+                "output": {
+                    "name": "memberDAO",
+                    "elements": [
+                        [
+                            "member_address",
+                            "address"
+                        ],
+                        [
+                            "member_check",
+                            "bool"
+                        ]
+                    ]
+                }
+            },
+            "call_config": {
+                "no_op": "CALL"
+            }
+        }
+    },
+    "source": {
+        "approval": "I3ByYWdtYSB2ZXJzaW9uIDgKaW50Y2Jsb2NrIDAgMQpieXRlY2Jsb2NrIDB4CnR4biBOdW1BcHBBcmdzCmludGNfMCAvLyAwCj09CmJueiBtYWluX2w2CnR4bmEgQXBwbGljYXRpb25BcmdzIDAKcHVzaGJ5dGVzIDB4ZDQ0MzQyYTEgLy8gImpvaW5fZGFvKChhZGRyZXNzLGJvb2wpKXZvaWQiCj09CmJueiBtYWluX2w1CnR4bmEgQXBwbGljYXRpb25BcmdzIDAKcHVzaGJ5dGVzIDB4YzBmYmI3OTMgLy8gImNoZWNrX21lbWJlcihhZGRyZXNzKShhZGRyZXNzLGJvb2wpIgo9PQpibnogbWFpbl9sNAplcnIKbWFpbl9sNDoKdHhuIE9uQ29tcGxldGlvbgppbnRjXzAgLy8gTm9PcAo9PQp0eG4gQXBwbGljYXRpb25JRAppbnRjXzAgLy8gMAohPQomJgphc3NlcnQKY2FsbHN1YiBjaGVja21lbWJlcmNhc3Rlcl8zCmludGNfMSAvLyAxCnJldHVybgptYWluX2w1Ogp0eG4gT25Db21wbGV0aW9uCmludGNfMCAvLyBOb09wCj09CnR4biBBcHBsaWNhdGlvbklECmludGNfMCAvLyAwCiE9CiYmCmFzc2VydApjYWxsc3ViIGpvaW5kYW9jYXN0ZXJfMgppbnRjXzEgLy8gMQpyZXR1cm4KbWFpbl9sNjoKdHhuIE9uQ29tcGxldGlvbgppbnRjXzAgLy8gTm9PcAo9PQpibnogbWFpbl9sOAplcnIKbWFpbl9sODoKdHhuIEFwcGxpY2F0aW9uSUQKaW50Y18wIC8vIDAKPT0KYXNzZXJ0CmludGNfMSAvLyAxCnJldHVybgoKLy8gam9pbl9kYW8Kam9pbmRhb18wOgpwcm90byAxIDAKaW50Y18wIC8vIDAKYnl0ZWNfMCAvLyAiIgpkdXAKaW50Y18wIC8vIDAKZHVwCmJ5dGVjXzAgLy8gIiIKZHVwCmludGNfMCAvLyAwCiEKIQpmcmFtZV9idXJ5IDAKdHhuIEFzc2V0U2VuZGVyCmZyYW1lX2J1cnkgMgpmcmFtZV9kaWcgMgpsZW4KcHVzaGludCAzMiAvLyAzMgo9PQphc3NlcnQKZnJhbWVfZGlnIDIKcHVzaGJ5dGVzIDB4MDAgLy8gMHgwMAppbnRjXzAgLy8gMApmcmFtZV9kaWcgMApzZXRiaXQKY29uY2F0CmZyYW1lX2J1cnkgMQpmcmFtZV9kaWcgMgpib3hfZGVsCnBvcApmcmFtZV9kaWcgMgpmcmFtZV9kaWcgMQpib3hfcHV0CmZyYW1lX2RpZyAyCmJveF9nZXQKc3RvcmUgMQpzdG9yZSAwCmxvYWQgMQphc3NlcnQKbG9hZCAwCmZyYW1lX2J1cnkgLTEKcmV0c3ViCgovLyBjaGVja19tZW1iZXIKY2hlY2ttZW1iZXJfMToKcHJvdG8gMSAxCmJ5dGVjXzAgLy8gIiIKZnJhbWVfZGlnIC0xCmJveF9nZXQKc3RvcmUgMwpzdG9yZSAyCmxvYWQgMwphc3NlcnQKbG9hZCAyCmZyYW1lX2J1cnkgMApyZXRzdWIKCi8vIGpvaW5fZGFvX2Nhc3Rlcgpqb2luZGFvY2FzdGVyXzI6CnByb3RvIDAgMApieXRlY18wIC8vICIiCnR4bmEgQXBwbGljYXRpb25BcmdzIDEKZnJhbWVfYnVyeSAwCmZyYW1lX2RpZyAwCmNhbGxzdWIgam9pbmRhb18wCnJldHN1YgoKLy8gY2hlY2tfbWVtYmVyX2Nhc3RlcgpjaGVja21lbWJlcmNhc3Rlcl8zOgpwcm90byAwIDAKYnl0ZWNfMCAvLyAiIgpkdXAKdHhuYSBBcHBsaWNhdGlvbkFyZ3MgMQpmcmFtZV9idXJ5IDEKZnJhbWVfZGlnIDEKY2FsbHN1YiBjaGVja21lbWJlcl8xCmZyYW1lX2J1cnkgMApwdXNoYnl0ZXMgMHgxNTFmN2M3NSAvLyAweDE1MWY3Yzc1CmZyYW1lX2RpZyAwCmNvbmNhdApsb2cKcmV0c3Vi",
+        "clear": "I3ByYWdtYSB2ZXJzaW9uIDgKcHVzaGludCAwIC8vIDAKcmV0dXJu"
+    },
+    "state": {
+        "global": {
+            "num_byte_slices": 0,
+            "num_uints": 0
+        },
+        "local": {
+            "num_byte_slices": 0,
+            "num_uints": 0
+        }
+    },
+    "schema": {
+        "global": {
+            "declared": {},
+            "reserved": {}
+        },
+        "local": {
+            "declared": {},
+            "reserved": {}
+        }
+    },
+    "contract": {
+        "name": "DAO",
+        "methods": [
+            {
+                "name": "join_dao",
+                "args": [],
+                "returns": {
+                    "type": "void"
+                }
+            },
+            {
+                "name": "check_member",
+                "args": [
+                    {
+                        "type": "address",
+                        "name": "addr"
+                    }
+                ],
+                "returns": {
+                    "type": "(address,bool)"
+                }
+            }
+        ],
+        "networks": {}
+    },
+    "bare_call_config": {
+        "no_op": "CREATE"
+    }
+}

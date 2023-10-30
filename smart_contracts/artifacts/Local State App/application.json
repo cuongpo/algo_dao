@@ -1,0 +1,74 @@
+{
+    "hints": {
+        "incr_local_state(uint64)void": {
+            "call_config": {
+                "no_op": "CALL"
+            }
+        },
+        "get_local_state()uint64": {
+            "read_only": true,
+            "call_config": {
+                "no_op": "CALL"
+            }
+        }
+    },
+    "source": {
+        "approval": "I3ByYWdtYSB2ZXJzaW9uIDgKaW50Y2Jsb2NrIDAgMQpieXRlY2Jsb2NrIDB4NjM2Zjc1NmU3NAp0eG4gTnVtQXBwQXJncwppbnRjXzAgLy8gMAo9PQpibnogbWFpbl9sNgp0eG5hIEFwcGxpY2F0aW9uQXJncyAwCnB1c2hieXRlcyAweDBlNTI2YmJkIC8vICJpbmNyX2xvY2FsX3N0YXRlKHVpbnQ2NCl2b2lkIgo9PQpibnogbWFpbl9sNQp0eG5hIEFwcGxpY2F0aW9uQXJncyAwCnB1c2hieXRlcyAweGJmYTBhNjM0IC8vICJnZXRfbG9jYWxfc3RhdGUoKXVpbnQ2NCIKPT0KYm56IG1haW5fbDQKZXJyCm1haW5fbDQ6CnR4biBPbkNvbXBsZXRpb24KaW50Y18wIC8vIE5vT3AKPT0KdHhuIEFwcGxpY2F0aW9uSUQKaW50Y18wIC8vIDAKIT0KJiYKYXNzZXJ0CmNhbGxzdWIgZ2V0bG9jYWxzdGF0ZWNhc3Rlcl80CmludGNfMSAvLyAxCnJldHVybgptYWluX2w1Ogp0eG4gT25Db21wbGV0aW9uCmludGNfMCAvLyBOb09wCj09CnR4biBBcHBsaWNhdGlvbklECmludGNfMCAvLyAwCiE9CiYmCmFzc2VydApjYWxsc3ViIGluY3Jsb2NhbHN0YXRlY2FzdGVyXzMKaW50Y18xIC8vIDEKcmV0dXJuCm1haW5fbDY6CnR4biBPbkNvbXBsZXRpb24KaW50Y18wIC8vIE5vT3AKPT0KYm56IG1haW5fbDEwCnR4biBPbkNvbXBsZXRpb24KaW50Y18xIC8vIE9wdEluCj09CmJueiBtYWluX2w5CmVycgptYWluX2w5Ogp0eG4gQXBwbGljYXRpb25JRAppbnRjXzAgLy8gMAohPQphc3NlcnQKY2FsbHN1YiBvcHRpbl8wCmludGNfMSAvLyAxCnJldHVybgptYWluX2wxMDoKdHhuIEFwcGxpY2F0aW9uSUQKaW50Y18wIC8vIDAKPT0KYXNzZXJ0CmludGNfMSAvLyAxCnJldHVybgoKLy8gb3B0X2luCm9wdGluXzA6CnByb3RvIDAgMAp0eG4gU2VuZGVyCmJ5dGVjXzAgLy8gImNvdW50IgppbnRjXzEgLy8gMQphcHBfbG9jYWxfcHV0CnJldHN1YgoKLy8gaW5jcl9sb2NhbF9zdGF0ZQppbmNybG9jYWxzdGF0ZV8xOgpwcm90byAxIDAKdHhuIFNlbmRlcgpieXRlY18wIC8vICJjb3VudCIKdHhuIFNlbmRlcgpieXRlY18wIC8vICJjb3VudCIKYXBwX2xvY2FsX2dldApmcmFtZV9kaWcgLTEKKwphcHBfbG9jYWxfcHV0CnJldHN1YgoKLy8gZ2V0X2xvY2FsX3N0YXRlCmdldGxvY2Fsc3RhdGVfMjoKcHJvdG8gMCAxCmludGNfMCAvLyAwCnR4biBTZW5kZXIKYnl0ZWNfMCAvLyAiY291bnQiCmFwcF9sb2NhbF9nZXQKZnJhbWVfYnVyeSAwCnJldHN1YgoKLy8gaW5jcl9sb2NhbF9zdGF0ZV9jYXN0ZXIKaW5jcmxvY2Fsc3RhdGVjYXN0ZXJfMzoKcHJvdG8gMCAwCmludGNfMCAvLyAwCnR4bmEgQXBwbGljYXRpb25BcmdzIDEKYnRvaQpmcmFtZV9idXJ5IDAKZnJhbWVfZGlnIDAKY2FsbHN1YiBpbmNybG9jYWxzdGF0ZV8xCnJldHN1YgoKLy8gZ2V0X2xvY2FsX3N0YXRlX2Nhc3RlcgpnZXRsb2NhbHN0YXRlY2FzdGVyXzQ6CnByb3RvIDAgMAppbnRjXzAgLy8gMApjYWxsc3ViIGdldGxvY2Fsc3RhdGVfMgpmcmFtZV9idXJ5IDAKcHVzaGJ5dGVzIDB4MTUxZjdjNzUgLy8gMHgxNTFmN2M3NQpmcmFtZV9kaWcgMAppdG9iCmNvbmNhdApsb2cKcmV0c3Vi",
+        "clear": "I3ByYWdtYSB2ZXJzaW9uIDgKcHVzaGludCAwIC8vIDAKcmV0dXJu"
+    },
+    "state": {
+        "global": {
+            "num_byte_slices": 0,
+            "num_uints": 0
+        },
+        "local": {
+            "num_byte_slices": 0,
+            "num_uints": 1
+        }
+    },
+    "schema": {
+        "global": {
+            "declared": {},
+            "reserved": {}
+        },
+        "local": {
+            "declared": {
+                "count": {
+                    "type": "uint64",
+                    "key": "count",
+                    "descr": "A Counter that keeps track of counts."
+                }
+            },
+            "reserved": {}
+        }
+    },
+    "contract": {
+        "name": "Local State App",
+        "methods": [
+            {
+                "name": "incr_local_state",
+                "args": [
+                    {
+                        "type": "uint64",
+                        "name": "v"
+                    }
+                ],
+                "returns": {
+                    "type": "void"
+                }
+            },
+            {
+                "name": "get_local_state",
+                "args": [],
+                "returns": {
+                    "type": "uint64"
+                }
+            }
+        ],
+        "networks": {}
+    },
+    "bare_call_config": {
+        "no_op": "CREATE",
+        "opt_in": "CALL"
+    }
+}

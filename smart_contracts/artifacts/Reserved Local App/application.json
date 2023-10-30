@@ -1,0 +1,82 @@
+{
+    "hints": {
+        "set_reserved_local_state_val(uint8,string)void": {
+            "call_config": {
+                "no_op": "CALL"
+            }
+        },
+        "get_reserved_local_state_val(uint8)string": {
+            "call_config": {
+                "no_op": "CALL"
+            }
+        }
+    },
+    "source": {
+        "approval": "I3ByYWdtYSB2ZXJzaW9uIDgKaW50Y2Jsb2NrIDAgMQpieXRlY2Jsb2NrIDB4IDB4MDAKdHhuIE51bUFwcEFyZ3MKaW50Y18wIC8vIDAKPT0KYm56IG1haW5fbDYKdHhuYSBBcHBsaWNhdGlvbkFyZ3MgMApwdXNoYnl0ZXMgMHg1NjhiMzE1OSAvLyAic2V0X3Jlc2VydmVkX2xvY2FsX3N0YXRlX3ZhbCh1aW50OCxzdHJpbmcpdm9pZCIKPT0KYm56IG1haW5fbDUKdHhuYSBBcHBsaWNhdGlvbkFyZ3MgMApwdXNoYnl0ZXMgMHhkM2FhNzY3NSAvLyAiZ2V0X3Jlc2VydmVkX2xvY2FsX3N0YXRlX3ZhbCh1aW50OClzdHJpbmciCj09CmJueiBtYWluX2w0CmVycgptYWluX2w0Ogp0eG4gT25Db21wbGV0aW9uCmludGNfMCAvLyBOb09wCj09CnR4biBBcHBsaWNhdGlvbklECmludGNfMCAvLyAwCiE9CiYmCmFzc2VydApjYWxsc3ViIGdldHJlc2VydmVkbG9jYWxzdGF0ZXZhbGNhc3Rlcl81CmludGNfMSAvLyAxCnJldHVybgptYWluX2w1Ogp0eG4gT25Db21wbGV0aW9uCmludGNfMCAvLyBOb09wCj09CnR4biBBcHBsaWNhdGlvbklECmludGNfMCAvLyAwCiE9CiYmCmFzc2VydApjYWxsc3ViIHNldHJlc2VydmVkbG9jYWxzdGF0ZXZhbGNhc3Rlcl80CmludGNfMSAvLyAxCnJldHVybgptYWluX2w2Ogp0eG4gT25Db21wbGV0aW9uCmludGNfMCAvLyBOb09wCj09CmJueiBtYWluX2wxMAp0eG4gT25Db21wbGV0aW9uCmludGNfMSAvLyBPcHRJbgo9PQpibnogbWFpbl9sOQplcnIKbWFpbl9sOToKdHhuIEFwcGxpY2F0aW9uSUQKaW50Y18wIC8vIDAKIT0KYXNzZXJ0CmNhbGxzdWIgb3B0aW5fMQppbnRjXzEgLy8gMQpyZXR1cm4KbWFpbl9sMTA6CnR4biBBcHBsaWNhdGlvbklECmludGNfMCAvLyAwCj09CmFzc2VydAppbnRjXzEgLy8gMQpyZXR1cm4KCi8vIHByZWZpeF9rZXlfZ2VuCnByZWZpeGtleWdlbl8wOgpwcm90byAxIDEKcHVzaGJ5dGVzIDB4NjY2MTc2NmY3MjY5NzQ2NTVmNjY2ZjZmNjQgLy8gImZhdm9yaXRlX2Zvb2QiCmZyYW1lX2RpZyAtMQpjb25jYXQKcmV0c3ViCgovLyBvcHRfaW4Kb3B0aW5fMToKcHJvdG8gMCAwCnJldHN1YgoKLy8gc2V0X3Jlc2VydmVkX2xvY2FsX3N0YXRlX3ZhbApzZXRyZXNlcnZlZGxvY2Fsc3RhdGV2YWxfMjoKcHJvdG8gMiAwCnR4biBTZW5kZXIKYnl0ZWNfMSAvLyAweDAwCmludGNfMCAvLyAwCmZyYW1lX2RpZyAtMgpzZXRieXRlCmNhbGxzdWIgcHJlZml4a2V5Z2VuXzAKZnJhbWVfZGlnIC0xCmV4dHJhY3QgMiAwCmFwcF9sb2NhbF9wdXQKcmV0c3ViCgovLyBnZXRfcmVzZXJ2ZWRfbG9jYWxfc3RhdGVfdmFsCmdldHJlc2VydmVkbG9jYWxzdGF0ZXZhbF8zOgpwcm90byAxIDEKYnl0ZWNfMCAvLyAiIgp0eG4gU2VuZGVyCmJ5dGVjXzEgLy8gMHgwMAppbnRjXzAgLy8gMApmcmFtZV9kaWcgLTEKc2V0Ynl0ZQpjYWxsc3ViIHByZWZpeGtleWdlbl8wCmFwcF9sb2NhbF9nZXQKZnJhbWVfYnVyeSAwCmZyYW1lX2RpZyAwCmxlbgppdG9iCmV4dHJhY3QgNiAwCmZyYW1lX2RpZyAwCmNvbmNhdApmcmFtZV9idXJ5IDAKcmV0c3ViCgovLyBzZXRfcmVzZXJ2ZWRfbG9jYWxfc3RhdGVfdmFsX2Nhc3RlcgpzZXRyZXNlcnZlZGxvY2Fsc3RhdGV2YWxjYXN0ZXJfNDoKcHJvdG8gMCAwCmludGNfMCAvLyAwCmJ5dGVjXzAgLy8gIiIKdHhuYSBBcHBsaWNhdGlvbkFyZ3MgMQppbnRjXzAgLy8gMApnZXRieXRlCmZyYW1lX2J1cnkgMAp0eG5hIEFwcGxpY2F0aW9uQXJncyAyCmZyYW1lX2J1cnkgMQpmcmFtZV9kaWcgMApmcmFtZV9kaWcgMQpjYWxsc3ViIHNldHJlc2VydmVkbG9jYWxzdGF0ZXZhbF8yCnJldHN1YgoKLy8gZ2V0X3Jlc2VydmVkX2xvY2FsX3N0YXRlX3ZhbF9jYXN0ZXIKZ2V0cmVzZXJ2ZWRsb2NhbHN0YXRldmFsY2FzdGVyXzU6CnByb3RvIDAgMApieXRlY18wIC8vICIiCmludGNfMCAvLyAwCnR4bmEgQXBwbGljYXRpb25BcmdzIDEKaW50Y18wIC8vIDAKZ2V0Ynl0ZQpmcmFtZV9idXJ5IDEKZnJhbWVfZGlnIDEKY2FsbHN1YiBnZXRyZXNlcnZlZGxvY2Fsc3RhdGV2YWxfMwpmcmFtZV9idXJ5IDAKcHVzaGJ5dGVzIDB4MTUxZjdjNzUgLy8gMHgxNTFmN2M3NQpmcmFtZV9kaWcgMApjb25jYXQKbG9nCnJldHN1Yg==",
+        "clear": "I3ByYWdtYSB2ZXJzaW9uIDgKcHVzaGludCAwIC8vIDAKcmV0dXJu"
+    },
+    "state": {
+        "global": {
+            "num_byte_slices": 0,
+            "num_uints": 0
+        },
+        "local": {
+            "num_byte_slices": 8,
+            "num_uints": 0
+        }
+    },
+    "schema": {
+        "global": {
+            "declared": {},
+            "reserved": {}
+        },
+        "local": {
+            "declared": {},
+            "reserved": {
+                "favorite_food": {
+                    "type": "bytes",
+                    "max_keys": 8,
+                    "descr": "8 key-value pairs of favorite foods ranked from 1 to 8."
+                }
+            }
+        }
+    },
+    "contract": {
+        "name": "Reserved Local App",
+        "methods": [
+            {
+                "name": "set_reserved_local_state_val",
+                "args": [
+                    {
+                        "type": "uint8",
+                        "name": "k"
+                    },
+                    {
+                        "type": "string",
+                        "name": "v"
+                    }
+                ],
+                "returns": {
+                    "type": "void"
+                }
+            },
+            {
+                "name": "get_reserved_local_state_val",
+                "args": [
+                    {
+                        "type": "uint8",
+                        "name": "k"
+                    }
+                ],
+                "returns": {
+                    "type": "string"
+                }
+            }
+        ],
+        "networks": {}
+    },
+    "bare_call_config": {
+        "no_op": "CREATE",
+        "opt_in": "CALL"
+    }
+}

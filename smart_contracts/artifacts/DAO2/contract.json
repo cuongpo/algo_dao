@@ -1,0 +1,30 @@
+{
+    "name": "DAO2",
+    "methods": [
+        {
+            "name": "join_dao",
+            "args": [
+                {
+                    "type": "string",
+                    "name": "addr"
+                }
+            ],
+            "returns": {
+                "type": "(string,bool)"
+            }
+        },
+        {
+            "name": "check_member",
+            "args": [
+                {
+                    "type": "string",
+                    "name": "addr"
+                }
+            ],
+            "returns": {
+                "type": "(string,bool)"
+            }
+        }
+    ],
+    "networks": {}
+}

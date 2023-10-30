@@ -1,0 +1,63 @@
+{
+    "name": "Simple DAO",
+    "methods": [
+        {
+            "name": "check_member_dao",
+            "args": [],
+            "returns": {
+                "type": "uint64"
+            }
+        },
+        {
+            "name": "join_dao",
+            "args": [],
+            "returns": {
+                "type": "void"
+            }
+        },
+        {
+            "name": "leave_dao",
+            "args": [],
+            "returns": {
+                "type": "void"
+            }
+        },
+        {
+            "name": "create_proposal",
+            "args": [
+                {
+                    "type": "string",
+                    "name": "descr"
+                }
+            ],
+            "returns": {
+                "type": "(string,uint64,uint64,string)"
+            }
+        },
+        {
+            "name": "check_proposal",
+            "args": [
+                {
+                    "type": "uint64",
+                    "name": "proposalId"
+                }
+            ],
+            "returns": {
+                "type": "(string,uint64,uint64,string)"
+            }
+        },
+        {
+            "name": "end_proposal",
+            "args": [
+                {
+                    "type": "uint64",
+                    "name": "proposalId"
+                }
+            ],
+            "returns": {
+                "type": "string"
+            }
+        }
+    ],
+    "networks": {}
+}

@@ -1,0 +1,150 @@
+#pragma version 8
+intcblock 0 1
+bytecblock 0x 0x151f7c75
+txn NumAppArgs
+intc_0 // 0
+==
+bnz main_l6
+txna ApplicationArgs 0
+pushbytes 0x2e122cd4 // "join_dao(string)(string,bool)"
+==
+bnz main_l5
+txna ApplicationArgs 0
+pushbytes 0xa35242d2 // "check_member(string)(string,bool)"
+==
+bnz main_l4
+err
+main_l4:
+txn OnCompletion
+intc_0 // NoOp
+==
+txn ApplicationID
+intc_0 // 0
+!=
+&&
+assert
+callsub checkmembercaster_3
+intc_1 // 1
+return
+main_l5:
+txn OnCompletion
+intc_0 // NoOp
+==
+txn ApplicationID
+intc_0 // 0
+!=
+&&
+assert
+callsub joindaocaster_2
+intc_1 // 1
+return
+main_l6:
+txn OnCompletion
+intc_0 // NoOp
+==
+bnz main_l8
+err
+main_l8:
+txn ApplicationID
+intc_0 // 0
+==
+assert
+intc_1 // 1
+return
+
+// join_dao
+joindao_0:
+proto 1 1
+bytec_0 // ""
+intc_0 // 0
+bytec_0 // ""
+intc_0 // 0
+dup
+bytec_0 // ""
+dup
+intc_0 // 0
+!
+!
+frame_bury 1
+frame_dig -1
+frame_bury 6
+frame_dig 6
+frame_bury 5
+pushint 3 // 3
+frame_bury 3
+frame_dig 3
+itob
+extract 6 0
+pushbytes 0x00 // 0x00
+intc_0 // 0
+frame_dig 1
+setbit
+concat
+frame_dig 5
+concat
+frame_bury 2
+frame_dig -1
+extract 2 0
+box_del
+pop
+frame_dig -1
+extract 2 0
+frame_dig 2
+box_put
+frame_dig -1
+extract 2 0
+box_get
+store 1
+store 0
+load 1
+assert
+load 0
+frame_bury 0
+retsub
+
+// check_member
+checkmember_1:
+proto 1 1
+bytec_0 // ""
+frame_dig -1
+extract 2 0
+box_get
+store 3
+store 2
+load 3
+assert
+load 2
+frame_bury 0
+retsub
+
+// join_dao_caster
+joindaocaster_2:
+proto 0 0
+bytec_0 // ""
+dup
+txna ApplicationArgs 1
+frame_bury 1
+frame_dig 1
+callsub joindao_0
+frame_bury 0
+bytec_1 // 0x151f7c75
+frame_dig 0
+concat
+log
+retsub
+
+// check_member_caster
+checkmembercaster_3:
+proto 0 0
+bytec_0 // ""
+dup
+txna ApplicationArgs 1
+frame_bury 1
+frame_dig 1
+callsub checkmember_1
+frame_bury 0
+bytec_1 // 0x151f7c75
+frame_dig 0
+concat
+log
+retsub
