@@ -24,8 +24,14 @@ class AppStateValue:
 
     memberDAO = LocalStateValue(
         stack_type=TealType.uint64,
-        default=Int(1),
+        default=Int(0),
         descr="Member DAO or not",
+    )
+
+    check_voted = ReservedLocalStateValue(
+        stack_type=TealType.uint64,
+        max_keys=8,
+        descr=("Check user voted in proposal"),
     )
 
     proposals = BoxMapping(abi.Uint64, proposalStruct)
@@ -48,7 +54,7 @@ def check_member_dao(*, output: abi.Uint64) -> Expr:
 @app.external
 def join_dao() -> Expr:
     return Seq(
-        app.state.memberDAO[Txn.sender()].set(Int(0)),
+        app.state.memberDAO[Txn.sender()].set(Int(1)),
         app.state.memberCount.increment(),
     )
 
@@ -125,3 +131,42 @@ def end_proposal(proposalId: abi.Uint64, *, output: abi.String) -> Expr:
         proposal.set(description, vote_yes, vote_no, new_status),
         app.state.proposals[proposalId].set(proposal),
     )
+
+
+## Vote yes=true, no=false
+@app.external
+def vote(proposalId: abi.Uint64, vote_choice: abi.Bool, *, output: abi.String) -> Expr:
+    voted = abi.Uint64()
+    proposal = proposalStruct()
+    description = abi.String()
+    vote_yes = abi.Uint64()
+    vote_no = abi.Uint64()
+    status = abi.String()
+
+    voted.set(app.state.check_voted[proposalId])
+
+    if voted.get() == Int(1):
+        output.set("you voted ----")
+
+    app.state.proposals[proposalId].store_into(proposal)
+    description.set(proposal.description)
+    status.set(proposal.status)
+    vote_yes.set(proposal.vote_yes)
+    vote_no.set(proposal.vote_no)
+
+    if vote_choice:
+        vote_yes.set(vote_yes.get() + Int(1))
+    else:
+        vote_no.set(vote_no.get() + Int(1))
+
+    return Seq(
+        proposal.set(description, vote_yes, vote_no, status),
+        app.state.proposals[proposalId].set(proposal),
+        app.state.check_voted[proposalId].set(Int(1)),
+        output.set("Vote Successfully"),
+    )
+
+
+@app.external
+def check_voted(proposalId: abi.Uint64, *, output: abi.Uint64) -> Expr:
+    return output.set(app.state.check_voted[proposalId])

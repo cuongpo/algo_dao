@@ -1,5 +1,5 @@
 {
-    "name": "Simple DAO",
+    "name": "Simple DAO 2",
     "methods": [
         {
             "name": "check_member_dao",
@@ -56,6 +56,34 @@
             ],
             "returns": {
                 "type": "string"
+            }
+        },
+        {
+            "name": "vote",
+            "args": [
+                {
+                    "type": "uint64",
+                    "name": "proposalId"
+                },
+                {
+                    "type": "bool",
+                    "name": "vote_choice"
+                }
+            ],
+            "returns": {
+                "type": "string"
+            }
+        },
+        {
+            "name": "check_voted",
+            "args": [
+                {
+                    "type": "uint64",
+                    "name": "proposalId"
+                }
+            ],
+            "returns": {
+                "type": "uint64"
             }
         }
     ],

@@ -1,59 +1,43 @@
 #pragma version 8
-intcblock 0 1
-bytecblock 0x 0x6d656d626572436f756e74 0x70726f706f73616c436f756e74 0x6d656d62657244414f 0x151f7c75
+intcblock 0 1 20 65536
+bytecblock 0x 0x151f7c75 0x6d656d626572436f756e74 0x70726f706f73616c436f756e74 0x6d656d62657244414f
 txn NumAppArgs
 intc_0 // 0
 ==
-bnz main_l14
+bnz main_l18
 txna ApplicationArgs 0
 pushbytes 0x1e41c19b // "check_member_dao()uint64"
 ==
-bnz main_l13
+bnz main_l17
 txna ApplicationArgs 0
 pushbytes 0x3ae8876d // "join_dao()void"
 ==
-bnz main_l12
+bnz main_l16
 txna ApplicationArgs 0
 pushbytes 0xef5d4196 // "leave_dao()void"
 ==
-bnz main_l11
+bnz main_l15
 txna ApplicationArgs 0
 pushbytes 0x1ef9b1b4 // "create_proposal(string)(string,uint64,uint64,string)"
 ==
-bnz main_l10
+bnz main_l14
 txna ApplicationArgs 0
 pushbytes 0x2e840386 // "check_proposal(uint64)(string,uint64,uint64,string)"
 ==
-bnz main_l9
+bnz main_l13
 txna ApplicationArgs 0
 pushbytes 0x4ea89666 // "end_proposal(uint64)string"
 ==
-bnz main_l8
+bnz main_l12
+txna ApplicationArgs 0
+pushbytes 0x200f2f23 // "vote(uint64,bool)string"
+==
+bnz main_l11
+txna ApplicationArgs 0
+pushbytes 0xc327a698 // "check_voted(uint64)uint64"
+==
+bnz main_l10
 err
-main_l8:
-txn OnCompletion
-intc_0 // NoOp
-==
-txn ApplicationID
-intc_0 // 0
-!=
-&&
-assert
-callsub endproposalcaster_13
-intc_1 // 1
-return
-main_l9:
-txn OnCompletion
-intc_0 // NoOp
-==
-txn ApplicationID
-intc_0 // 0
-!=
-&&
-assert
-callsub checkproposalcaster_12
-intc_1 // 1
-return
 main_l10:
 txn OnCompletion
 intc_0 // NoOp
@@ -63,7 +47,7 @@ intc_0 // 0
 !=
 &&
 assert
-callsub createproposalcaster_11
+callsub checkvotedcaster_18
 intc_1 // 1
 return
 main_l11:
@@ -75,7 +59,7 @@ intc_0 // 0
 !=
 &&
 assert
-callsub leavedaocaster_10
+callsub votecaster_17
 intc_1 // 1
 return
 main_l12:
@@ -87,7 +71,7 @@ intc_0 // 0
 !=
 &&
 assert
-callsub joindaocaster_9
+callsub endproposalcaster_16
 intc_1 // 1
 return
 main_l13:
@@ -99,75 +83,131 @@ intc_0 // 0
 !=
 &&
 assert
-callsub checkmemberdaocaster_8
+callsub checkproposalcaster_15
 intc_1 // 1
 return
 main_l14:
 txn OnCompletion
 intc_0 // NoOp
 ==
-bnz main_l18
+txn ApplicationID
+intc_0 // 0
+!=
+&&
+assert
+callsub createproposalcaster_14
+intc_1 // 1
+return
+main_l15:
+txn OnCompletion
+intc_0 // NoOp
+==
+txn ApplicationID
+intc_0 // 0
+!=
+&&
+assert
+callsub leavedaocaster_13
+intc_1 // 1
+return
+main_l16:
+txn OnCompletion
+intc_0 // NoOp
+==
+txn ApplicationID
+intc_0 // 0
+!=
+&&
+assert
+callsub joindaocaster_12
+intc_1 // 1
+return
+main_l17:
+txn OnCompletion
+intc_0 // NoOp
+==
+txn ApplicationID
+intc_0 // 0
+!=
+&&
+assert
+callsub checkmemberdaocaster_11
+intc_1 // 1
+return
+main_l18:
+txn OnCompletion
+intc_0 // NoOp
+==
+bnz main_l22
 txn OnCompletion
 intc_1 // OptIn
 ==
-bnz main_l17
+bnz main_l21
 err
-main_l17:
+main_l21:
 txn ApplicationID
 intc_0 // 0
 !=
 assert
-callsub optin_1
+callsub optin_2
 intc_1 // 1
 return
-main_l18:
+main_l22:
 txn ApplicationID
 intc_0 // 0
 ==
 assert
-callsub create_0
+callsub create_1
 intc_1 // 1
 return
 
+// prefix_key_gen
+prefixkeygen_0:
+proto 1 1
+pushbytes 0x636865636b5f766f746564 // "check_voted"
+frame_dig -1
+concat
+retsub
+
 // create
-create_0:
+create_1:
 proto 0 0
-bytec_1 // "memberCount"
+bytec_2 // "memberCount"
 intc_0 // 0
 app_global_put
-bytec_2 // "proposalCount"
+bytec_3 // "proposalCount"
 intc_0 // 0
 app_global_put
 retsub
 
 // opt_in
-optin_1:
+optin_2:
 proto 0 0
 txn Sender
-bytec_3 // "memberDAO"
-intc_1 // 1
+bytec 4 // "memberDAO"
+intc_0 // 0
 app_local_put
 retsub
 
 // check_member_dao
-checkmemberdao_2:
+checkmemberdao_3:
 proto 0 1
 intc_0 // 0
 txn Sender
-bytec_3 // "memberDAO"
+bytec 4 // "memberDAO"
 app_local_get
 frame_bury 0
 retsub
 
 // join_dao
-joindao_3:
+joindao_4:
 proto 0 0
 txn Sender
-bytec_3 // "memberDAO"
-intc_0 // 0
+bytec 4 // "memberDAO"
+intc_1 // 1
 app_local_put
-bytec_1 // "memberCount"
-bytec_1 // "memberCount"
+bytec_2 // "memberCount"
+bytec_2 // "memberCount"
 app_global_get
 intc_1 // 1
 +
@@ -175,14 +215,14 @@ app_global_put
 retsub
 
 // leave_dao
-leavedao_4:
+leavedao_5:
 proto 0 0
 txn Sender
-bytec_3 // "memberDAO"
+bytec 4 // "memberDAO"
 intc_1 // 1
 app_local_put
-bytec_1 // "memberCount"
-bytec_1 // "memberCount"
+bytec_2 // "memberCount"
+bytec_2 // "memberCount"
 app_global_get
 intc_1 // 1
 -
@@ -190,7 +230,7 @@ app_global_put
 retsub
 
 // create_proposal
-createproposal_5:
+createproposal_6:
 proto 1 1
 bytec_0 // ""
 dup
@@ -211,7 +251,7 @@ frame_dig -1
 frame_bury 9
 frame_dig 9
 frame_bury 8
-pushint 20 // 20
+intc_2 // 20
 frame_bury 6
 frame_dig 6
 frame_dig 9
@@ -219,7 +259,7 @@ len
 +
 frame_bury 7
 frame_dig 7
-pushint 65536 // 65536
+intc_3 // 65536
 <
 assert
 frame_dig 6
@@ -246,7 +286,7 @@ concat
 frame_dig 8
 concat
 frame_bury 1
-bytec_2 // "proposalCount"
+bytec_3 // "proposalCount"
 app_global_get
 frame_bury 2
 frame_dig 2
@@ -257,8 +297,8 @@ frame_dig 2
 itob
 frame_dig 1
 box_put
-bytec_2 // "proposalCount"
-bytec_2 // "proposalCount"
+bytec_3 // "proposalCount"
+bytec_3 // "proposalCount"
 app_global_get
 intc_1 // 1
 +
@@ -275,7 +315,7 @@ frame_bury 0
 retsub
 
 // check_proposal
-checkproposal_6:
+checkproposal_7:
 proto 1 1
 bytec_0 // ""
 frame_dig -1
@@ -290,7 +330,7 @@ frame_bury 0
 retsub
 
 // end_proposal
-endproposal_7:
+endproposal_8:
 proto 1 1
 bytec_0 // ""
 dupn 2
@@ -302,13 +342,96 @@ pushbytes 0x000e50726f706f73616c20456e646564 // 0x000e50726f706f73616c20456e6465
 frame_bury 0
 retsub
 
+// vote
+vote_9:
+proto 2 1
+bytec_0 // ""
+intc_0 // 0
+bytec_0 // ""
+dup
+intc_0 // 0
+dup
+bytec_0 // ""
+intc_0 // 0
+dup
+bytec_0 // ""
+dup
+frame_dig 3
+frame_bury 10
+frame_dig 10
+frame_bury 9
+intc_2 // 20
+frame_bury 7
+frame_dig 7
+frame_dig 10
+len
++
+frame_bury 8
+frame_dig 8
+intc_3 // 65536
+<
+assert
+frame_dig 7
+itob
+extract 6 0
+frame_dig 4
+itob
+concat
+frame_dig 5
+itob
+concat
+frame_dig 6
+frame_bury 10
+frame_dig 9
+frame_dig 10
+concat
+frame_bury 9
+frame_dig 8
+frame_bury 7
+frame_dig 7
+itob
+extract 6 0
+concat
+frame_dig 9
+concat
+frame_bury 2
+frame_dig -2
+itob
+box_del
+pop
+frame_dig -2
+itob
+frame_dig 2
+box_put
+txn Sender
+frame_dig -2
+itob
+callsub prefixkeygen_0
+intc_1 // 1
+app_local_put
+pushbytes 0x0011566f7465205375636365737366756c6c79 // 0x0011566f7465205375636365737366756c6c79
+frame_bury 0
+retsub
+
+// check_voted
+checkvoted_10:
+proto 1 1
+intc_0 // 0
+txn Sender
+frame_dig -1
+itob
+callsub prefixkeygen_0
+app_local_get
+frame_bury 0
+retsub
+
 // check_member_dao_caster
-checkmemberdaocaster_8:
+checkmemberdaocaster_11:
 proto 0 0
 intc_0 // 0
-callsub checkmemberdao_2
+callsub checkmemberdao_3
 frame_bury 0
-bytec 4 // 0x151f7c75
+bytec_1 // 0x151f7c75
 frame_dig 0
 itob
 concat
@@ -316,35 +439,35 @@ log
 retsub
 
 // join_dao_caster
-joindaocaster_9:
+joindaocaster_12:
 proto 0 0
-callsub joindao_3
+callsub joindao_4
 retsub
 
 // leave_dao_caster
-leavedaocaster_10:
+leavedaocaster_13:
 proto 0 0
-callsub leavedao_4
+callsub leavedao_5
 retsub
 
 // create_proposal_caster
-createproposalcaster_11:
+createproposalcaster_14:
 proto 0 0
 bytec_0 // ""
 dup
 txna ApplicationArgs 1
 frame_bury 1
 frame_dig 1
-callsub createproposal_5
+callsub createproposal_6
 frame_bury 0
-bytec 4 // 0x151f7c75
+bytec_1 // 0x151f7c75
 frame_dig 0
 concat
 log
 retsub
 
 // check_proposal_caster
-checkproposalcaster_12:
+checkproposalcaster_15:
 proto 0 0
 bytec_0 // ""
 intc_0 // 0
@@ -352,16 +475,16 @@ txna ApplicationArgs 1
 btoi
 frame_bury 1
 frame_dig 1
-callsub checkproposal_6
+callsub checkproposal_7
 frame_bury 0
-bytec 4 // 0x151f7c75
+bytec_1 // 0x151f7c75
 frame_dig 0
 concat
 log
 retsub
 
 // end_proposal_caster
-endproposalcaster_13:
+endproposalcaster_16:
 proto 0 0
 bytec_0 // ""
 intc_0 // 0
@@ -369,10 +492,53 @@ txna ApplicationArgs 1
 btoi
 frame_bury 1
 frame_dig 1
-callsub endproposal_7
+callsub endproposal_8
 frame_bury 0
-bytec 4 // 0x151f7c75
+bytec_1 // 0x151f7c75
 frame_dig 0
+concat
+log
+retsub
+
+// vote_caster
+votecaster_17:
+proto 0 0
+bytec_0 // ""
+intc_0 // 0
+dup
+txna ApplicationArgs 1
+btoi
+frame_bury 1
+txna ApplicationArgs 2
+intc_0 // 0
+pushint 8 // 8
+*
+getbit
+frame_bury 2
+frame_dig 1
+frame_dig 2
+callsub vote_9
+frame_bury 0
+bytec_1 // 0x151f7c75
+frame_dig 0
+concat
+log
+retsub
+
+// check_voted_caster
+checkvotedcaster_18:
+proto 0 0
+intc_0 // 0
+dup
+txna ApplicationArgs 1
+btoi
+frame_bury 1
+frame_dig 1
+callsub checkvoted_10
+frame_bury 0
+bytec_1 // 0x151f7c75
+frame_dig 0
+itob
 concat
 log
 retsub
